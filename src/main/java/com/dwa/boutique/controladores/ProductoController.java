@@ -46,11 +46,12 @@ public class ProductoController {
 			modelo.addAttribute("error","No Hay Productos Registrados.");
 		}
 		modelo.addAttribute("producto", new Producto());
+		
 		if(!servicioProducto.getMensaje().equals("")) 
 		{
 			modelo.addAttribute("error",servicioProducto.getMensaje());
 		}
-		return "producto/GestionProducto";
+		return "/producto/GestionProducto";
 	}
 	
 	
@@ -64,7 +65,7 @@ public class ProductoController {
 			return "redirect:/producto/GestionProducto";
 		}
 		modelo.addAttribute("error", servicioProducto.getMensaje());
-		return "producto/GestionProducto";
+		return "/producto/GestionProducto";
 	}
 	
 	
@@ -81,7 +82,7 @@ public class ProductoController {
 		modelo.addAttribute("producto",producto);
 		modelo.addAttribute("productos",productos);
 	
-		return "producto/GestionProducto";
+		return "/producto/GestionProducto";
 	}
 	
 	@GetMapping("/producto/EliminarProducto/{id}")
