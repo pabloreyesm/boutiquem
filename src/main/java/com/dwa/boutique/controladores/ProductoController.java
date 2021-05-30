@@ -28,7 +28,7 @@ public class ProductoController {
 	
 	
 	
-	@GetMapping("/producto/GestionProducto")
+	@GetMapping("/producto/gestionproducto")
 	public String listar(Model modelo,HttpSession sesion) {
 		
 		int iduser = Integer.parseInt(sesion.getAttribute("iduser").toString());
@@ -51,7 +51,7 @@ public class ProductoController {
 		{
 			modelo.addAttribute("error",servicioProducto.getMensaje());
 		}
-		return "/producto/GestionProducto";
+		return "producto/gestionproducto";
 	}
 	
 	
